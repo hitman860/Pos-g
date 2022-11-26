@@ -1,0 +1,7 @@
+.header{
+    width: 100w;
+    height: 5vh;
+    display: flex;
+    color: aliceblue;
+    background: hsl(0deg 0% 17%);
+}   
