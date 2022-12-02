@@ -21,13 +21,18 @@
     display: flex;
     justify-content:space-evenly;
     flex-wrap: wrap;
-    column-gap: 3px;
+    column-gap: 5px;
     row-gap: 3px;
     margin-top: 5px;
   
     
   }
-  
+
+.products img{
+  background-position: center;
+  background-size: cover;
+      width: 99%;
+  }
   .content .pay{
     width: 100%;
     height: 20%;

@@ -3,6 +3,7 @@ import  './post_main.css'
 import Order from './order/Order'
 import Content from './content/Content'
 import {elements} from '../../asset/data'
+import ListProvider ,{ListContext} from '../context/listContext'
 const Pmian = () => {
   const [data, setdata] = useState('')
   useEffect(() => {
@@ -25,10 +26,14 @@ const Pmian = () => {
   }
   
   return (
+    <ListProvider>
+
+   
     <div className='post_main'>
       <Content elements={data} />
         <Order />
         </div>
+        </ListProvider>
   )
 }
 
