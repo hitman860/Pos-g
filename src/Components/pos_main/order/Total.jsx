@@ -12,7 +12,7 @@ const Total = () => {
     }, [list])
 
     const fetchTotal=()=>{
-        let x=list.length;
+        let x=0;
         for (let i = 0; i < list.length; i++) {
             const element = list[i].qty *list[i].price;
               x=x+element
