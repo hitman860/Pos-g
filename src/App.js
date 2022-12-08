@@ -5,6 +5,7 @@ import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home';
 import Login from './pages/login';
 import UserProvider from './Components/context/userContext';
+import Page404 from './pages/Page404';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Navigate to='/home' />} />
         <Route path='/home' element={<Home  />} />
         <Route path='/login' element={<Login />}/>
+        <Route path='/*' element={<Page404/>}/> 
       </Routes>
       </BrowserRouter>
       </UserProvider>

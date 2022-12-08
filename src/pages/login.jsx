@@ -28,7 +28,7 @@ useEffect(() => {
        console.log('email:',userlogin.fullname,userlogin.password)
     }
     else{
-      alert("Rowing email or password");    }
+      alert("Rowng email or password");    }
 
   }
   return (
