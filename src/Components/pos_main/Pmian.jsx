@@ -4,26 +4,13 @@ import Order from './order/Order'
 import Content from './content/Content'
 import {elements} from '../../asset/data'
 import ListProvider ,{ListContext} from '../context/listContext'
+import usefetchdata from '../hooks/fetchdata'
 const Pmian = () => {
   const [data, setdata] = useState('')
   useEffect(() => {
-    fetch()
-    
+   setdata (usefetchdata())
    
   }, [])
-  const fetch=()=>{
-    const datafromlocal=JSON.parse(localStorage.getItem('elements')||'[]')
-    if(datafromlocal.length===0){
-      const data= localStorage.setItem('elements',JSON.stringify ( elements))
-      setdata(data)
-
-    }
-    else{
-     
-      setdata(datafromlocal)
-    }
-    
-  }
   
   return (
     <ListProvider>

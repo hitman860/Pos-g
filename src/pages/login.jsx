@@ -25,7 +25,7 @@ useEffect(() => {
     if(loginUser){
       handelUserlogin(loginUser)
         navigate('/home',{replace:true})
-       console.log('email:',userlogin.fullname,userlogin.password)
+      // console.log('email:',userlogin.fullname,userlogin.password)
     }
     else{
       alert("Rowng email or password");    }

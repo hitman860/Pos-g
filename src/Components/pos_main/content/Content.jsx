@@ -6,19 +6,13 @@ import AddPro from '../service/AddPro'
 import Services from '../service/services'
 import PayElements from '../payelement/PayElements'
 import { useSearchParams } from 'react-router-dom'
+import useCategory from '../../hooks/Category'
 const Content = ({ elements }) => {
   const [random, setrandom] = useState([])
   const [params] = useSearchParams()
   const q = params.get('query')
-  const category = []
-  elements && elements.map(element => {
-    if (category.includes(element.category)) {
-    }
-    else {
-      category.push(element.category)
-
-    }
-  })
+ 
+ const  category= useCategory()
   useEffect(() => {
     randompro()
 
