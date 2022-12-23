@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-const SaveSale = () => {
+const SaveSale = ({openmodl}) => {
+ 
+   const handleClick=()=>{
+    openmodl(true)
+   }
   return (
-    <div className='pos_element'>
+    <div className='pos_element' onClick={handleClick}>
         <span>Save</span>
         <span>Sale</span>
        </div>

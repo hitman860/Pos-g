@@ -1,35 +1,26 @@
 import React,{useContext,useEffect} from 'react';
 import './login.css';
 import { User, Lock, PaperPlaneRight } from "phosphor-react";
-import {useNavigate} from 'react-router-dom'
-import {users} from '../asset/user'
+// import {users} from '../asset/user'
 import {uescontext} from '../Components/context/userContext'
 const Login = () => {
-  const navigate=useNavigate()
    const {userlogin, handelUserlogin} = useContext(uescontext)
 useEffect(() => {
   if(userlogin !==null){
-    navigate('/home')
+   // navigate('/home')
 
   }
 
 }, [userlogin])
 
 
-  const handelLogin = (e) => {
+  const handelLogin = async(e) => {
       e.preventDefault();
       const email = e.target.email.value;
       const password = e.target.password.value;
-    const loginUser=  users.find( (user)=>{
-       return user.email===email && user.password ===password}) ;
-    if(loginUser){
-      handelUserlogin(loginUser)
-        navigate('/home',{replace:true})
-      // console.log('email:',userlogin.fullname,userlogin.password)
-    }
-    else{
-      alert("Rowng email or password");    }
 
+      handelUserlogin(email,password)
+  
   }
   return (
     <div className="container">

@@ -1,4 +1,4 @@
-import React,{useEffect,useContext} from 'react'
+import {useEffect,useContext} from 'react'
 import {uescontext} from '../context/userContext'
 import { useNavigate } from 'react-router-dom'
 const useIsAdmin = () => {
@@ -6,7 +6,8 @@ const useIsAdmin = () => {
  const navegate=useNavigate()
 
  useEffect(() => {
-    if( userlogin === null || userlogin.roule!=='admin'){
+    if( userlogin === null || userlogin.user?.isAdmin!==true){
+      
         navegate('/login')
   
      }

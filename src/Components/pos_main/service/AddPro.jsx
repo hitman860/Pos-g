@@ -12,7 +12,7 @@ const AddPro = () => {
   return (
     <div className='pos_elementadd' >
      {
-      userlogin  && userlogin.roule ==='admin'?
+      userlogin  && userlogin.user.isAdmin ===true?
        <Plus size={50} color="#272626" weight="thin" 
        onClick={()=>{navegate('/addpro')}}/>:userlogin?userlogin.roule:null
      }

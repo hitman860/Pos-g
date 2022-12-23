@@ -7,14 +7,13 @@ import { SignOut } from 'phosphor-react'
 import { uescontext } from '../context/userContext'
 const Header = () => {
   const { userlogin, handleLogout } = useContext(uescontext)
-
   return (
  
     <div className='header'>
             <span className='userlogedin'>
            {
         userlogin ?
-           <>{userlogin.fullname}
+           <>{userlogin.user.fullname}
           <div onClick={handleLogout}>
             <SignOut size={30} color="#fffafa" />
           </div>

@@ -5,6 +5,7 @@ import Lockuser from '../payelement/Lockuser'
 import Pay from '../payelement/Pay'
 import Sale from '../payelement/Sale'
 import {Trash,LockKey,Users} from 'phosphor-react'
+
 const PayElements = () => {
   return (
     <>
@@ -12,6 +13,8 @@ const PayElements = () => {
 <Lockuser  Icon={LockKey} />
 <Sale Icon={Trash} />
 <Pay />
+
+ 
     </>
   )
 }

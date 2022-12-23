@@ -17,7 +17,7 @@ const Content = ({ elements }) => {
     randompro()
 
   }, [elements])
-
+console.log('co',elements)
   const randompro = () => {
 
     const randompro = []
@@ -32,7 +32,6 @@ const Content = ({ elements }) => {
         }
       }
     }
-    console.log('ran', randompro)
     setrandom(randompro)
   }
 
@@ -40,26 +39,27 @@ const Content = ({ elements }) => {
     <div className='content' >
       <div className='product_type'>
         <AddPro />
-        {category && category.map(element => {
-          return <Element category={element} key={[element]} />
+        {category && category.map((element,i) => {
+         
+          return <Element category={element} key={i} />
         })}
       </div>
 
       <div className='products'>
 
         {
-          q ? elements && elements.map(element => {
+          q ? elements && elements.map((element) => {
             if (element.category === q) {
-              return <Producut element={element} key={element.id} />
+              return <Producut element={element} key={element._id} />
             }
 
           })
 
             :
-            random && random.map(element => {
+            random && random.map((element) => {
 
 
-              return <Producut element={element} key={element.id} />
+              return <Producut element={element} key={element._id} />
             })
         }
 

@@ -1,20 +1,22 @@
-import React,{useContext,useEffect} from 'react'
+import {useContext,useEffect} from 'react'
 import {uescontext} from '../context/userContext'
 import { useNavigate } from 'react-router-dom'
 
 const useAuth = () => {
- 
     const {userlogin} = useContext(uescontext)
     const navigate=useNavigate();
-
+     // console.log('aseAtuth',userlogin.user)
+     
   useEffect(() => {
-    if(userlogin === null ){
-      navigate('/login')
+
+    if(  userlogin.user===undefined ){
+     
+    navigate('/login')
 
     }
   
    
-  }, [userlogin])
+  }, [userlogin.user])
 
   
   return userlogin

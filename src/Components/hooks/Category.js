@@ -1,12 +1,13 @@
-import React from 'react'
-import usefetchdata from './fetchdata'
+import {useFetchdata} from './fetchdata'
 
 
 const useCategory= () => {
-  const elements=usefetchdata()
+ // console.log('data in usecategory',useFetchdata())
   const category = []
+  const elements=useFetchdata()
   elements && elements.map(element => {
     if (category.includes(element.category)) {
+      return category
     }
     else {
       category.push(element.category)

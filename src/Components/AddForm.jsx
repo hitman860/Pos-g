@@ -1,23 +1,30 @@
 import React,{useState} from 'react'
 import useCategory from './hooks/Category'
-import usefetchdata from './hooks/fetchdata'
+import {useFetchdata,addItem} from './hooks/fetchdata'
 const AddForm = () => {
   const category = useCategory()
-  const oldData=usefetchdata()
+  const oldData=useFetchdata()
   const [kind, setkind] = useState('')
   const handlesubmit = (e) => {
     e.preventDefault()
-    const newitem={
-      id:Math.random(Date().now),
-      title:  e.target.title.value,
+     const newitem={
+      title:e.target.title.value,
       price: e.target.price.value,
       size: e.target.size.value,
       quantity: e.target.quantity.value,
       category: kind!==''?kind:e.target.category.value,
-      image: e.target.image.value}
-      localStorage.setItem('elements',JSON.stringify( [newitem,...oldData]))
+      image: e.target.image.value
+     }
+     const additem=addItem(newitem)
+     if(additem){
       alert('Add Item successful')
-       rest(e)
+      rest(e)
+     }
+     
+      
+      
+     // localStorage.setItem('elements',JSON.stringify( [newitem,...oldData]))
+     
   }
   const rest=(e)=>{
     e.target.title.value=''

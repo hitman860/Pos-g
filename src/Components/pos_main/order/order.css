@@ -128,15 +128,14 @@
     background-color: hsl(0deg 0% 94%);
   }
   li > span{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 2px;
-    /* background-color: aquamarine; */
+    width: 20%;
+    font-size: 15px;
+   
   }
   .editeqty{
    height: 20px;
     display: flex;
+    flex-direction: column;
   }
   .editeqty > input {
     max-width: 80px;
@@ -150,25 +149,36 @@
     height: 30%;
     display: flex;
     padding-top: 20px;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content:space-evenly;
     align-items: self-start;
+   
   }
 
-  .total .label{
-    width: 100px;
-    height: 20%;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 10px;
-    font-size: larger;
-    font-weight: 700;
-  }
-
-    .totalprice{
-      width: 120px;
+  
+    .total  .t{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .t label{
+      width: 100px;
       height: 20%;
       display: flex;
       justify-content: flex-start;
+      padding-left: 10px;
       font-size: larger;
-    font-weight: 700;
+      font-weight: 700;
+    }
+  
+      .t span{
+        width: 20px;
+        height: 20%;
+        display: flex;
+        justify-content: flex-start;
+        font-size: larger;
+      font-weight: 700;
+      }
+      .t_lab {font-weight: 300;
+      font-size:medium 
     }
