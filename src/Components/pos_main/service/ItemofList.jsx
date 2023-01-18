@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Li = ({item}) => {
+  
   return (
     <div className='listofitem'>
       <span>{item.name}</span>

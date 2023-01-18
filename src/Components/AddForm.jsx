@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import useCategory from './hooks/Category'
-import {useFetchdata,addItem} from './hooks/fetchdata'
+import {addItem} from './hooks/fetchdata'
 const AddForm = () => {
   const category = useCategory()
-  const oldData=useFetchdata()
+ 
   const [kind, setkind] = useState('')
   const handlesubmit = (e) => {
     e.preventDefault()
@@ -66,7 +66,8 @@ const AddForm = () => {
               )
             }
           </select>
-        OR  <input type='text'onChange={(e)=>{setkind(e.target.value)}} />
+        OR 
+         <input type='text'onChange={(e)=>{setkind(e.target.value)}} />
         </span>
         <span>
           <label >QTY</label>
@@ -77,7 +78,7 @@ const AddForm = () => {
           <input type='url' name='image' required></input>
         </span>
 
-        <button type='submit' >Add</button>
+        <button type='submit' >ADD</button>
       </form>
     </div>
   )

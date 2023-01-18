@@ -7,11 +7,7 @@ import ListProvider  from '../context/listContext'
 import  {useFetchdata} from '../hooks/fetchdata'
 const Pmian = () => {
   const x=useFetchdata()
-  // const [data, setdata] = useState('')
-  // useEffect(() => {
-  //  setdata (x)
-   
-  // }, [])
+ 
   console.log('pmin',x)
   return (
     <ListProvider>

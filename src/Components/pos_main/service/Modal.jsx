@@ -1,14 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useState,useContext } from 'react'
 import { ListContext } from '../../context/listContext'
 import Li from './ItemofList'
 import "./Modal.css"
-
-export const Modal = ({ closeModl }) => {
+import {postInvoice} from '../../hooks/fetchdata'
+export const Modal = ({ closeModl ,id}) => {
+  const [isconfarm, setisconfarm] = useState(false)
   const context = useContext(ListContext)
   const { list } = context;
-  const idv = Math.random() * 100
-  const newinv = [...list, idv]
-  console.log('invoice', newinv)
+  const invoicehandle=(e)=>{
+    e.preventDefault()
+   const  newinv = {list,id:id }
+     const confarm= postInvoice(newinv)
+
+     if(confarm){
+      setisconfarm(true)
+      alert('add invoice successful')
+     }
+    
+          
+  }
   return (
     <div className='modalBackground'>
       <div className='modalContainer'>
@@ -16,7 +26,7 @@ export const Modal = ({ closeModl }) => {
           <button onClick={() => closeModl(false)} >  X </button>
         </div>
         <div className='title'>
-          <h3> Invoice # 123  </h3>
+          <h3> Invoice # {id} </h3>
         </div>
         <div className='body'>
           <ul className='list'>
@@ -30,7 +40,7 @@ export const Modal = ({ closeModl }) => {
         </div>
         <div className='footer'>
           <button onClick={() => closeModl(false)} id='cancelBtn' >Cancel </button>
-          <button>Continue </button>
+          <button  disabled={isconfarm?true:false}   onClick={invoicehandle}>Continue </button>
         </div>
 
 

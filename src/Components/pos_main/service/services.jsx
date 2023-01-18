@@ -12,6 +12,7 @@ import { Modal } from './Modal'
 
 const Services = () => {
   const [openModl, setopenModl] = useState(false)
+  const id = Math.floor(Math.random()*1000)
 
   return (
     <>
@@ -22,7 +23,7 @@ const Services = () => {
       <Coupon />
       <Note Icon={Notepad} />
       <Discount Icon={CircleHalfTilt} />
-      {openModl && <Modal closeModl={setopenModl} />}
+      {openModl && <Modal closeModl={setopenModl} id={id} />}
     </>
   )
 }
