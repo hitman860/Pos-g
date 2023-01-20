@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Point of sale 
+its a web app use in markets, actually in anywhere to help salesman do a job better and faster
+im use reactjs library in frontend  css and html5 and antdesign ui and  nodejs ,express framwork ,mongodb in backend 
+ i face problem how to edit number of pieces in order list and  i solved it  
+ some features i hope to implements  
+activate all services in app  like add users and add ways of payment
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
